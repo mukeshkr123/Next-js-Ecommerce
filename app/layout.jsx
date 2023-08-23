@@ -15,8 +15,8 @@ const montserrat = Montserrat({
 });
 
 export const metadata = {
-  title: "Ecommerce next-js",
-  description: "You can buy anything from here",
+  title: "Next js Ecommerce",
+  description: "This is a shop where we sell online Game",
 };
 
 export default function RootLayout({ children }) {
