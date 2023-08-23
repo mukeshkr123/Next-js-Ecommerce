@@ -1,6 +1,7 @@
 import Header from "@/components/header/Header";
 import "./globals.css";
 import { Montserrat, Poppins } from "next/font/google";
+import Footer from "@/components/footer/Footer";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -26,7 +27,7 @@ export default function RootLayout({ children }) {
       <body>
         <Header />
         <main className="bg-primary-gradient max-h-screen">{children}</main>
-        <footer>Footer</footer>
+        <Footer />
       </body>
     </html>
   );
