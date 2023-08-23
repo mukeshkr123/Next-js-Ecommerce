@@ -1,6 +1,9 @@
 import GameCard from "@/components/GameCard/GameCard";
 import HeroSection from "@/components/hero/Hero";
+import Image from "next/image";
+import Link from "next/link";
 import React from "react";
+import featuredImage from "@/public/images/trending.jpeg";
 
 const page = () => {
   return (
@@ -22,6 +25,28 @@ const page = () => {
               price={game.price}
             />
           ))}
+        </div>
+      </section>
+
+      <h3 className="font-semibold text-2xl max-w-3xl text-center text-primary-dark m-20 ">
+        Featured Game
+      </h3>
+
+      <section className={sectionClassNames.featured}>
+        <div className={sectionClassNames.featuredContent}>
+          <h2 className={featuredClassNames.gameName}>{featuredGame.name}</h2>
+          <p className={featuredClassNames.gameDetails}>
+            {featuredGame.description}
+          </p>
+          <Link href={`/games/${featuredGame.slug}`}>
+            <Image
+              src={featuredGame.image}
+              width={500}
+              height={500}
+              alt={featuredGame.name}
+              className={featuredClassNames.gameImage}
+            />
+          </Link>
         </div>
       </section>
     </>
@@ -74,5 +99,19 @@ const games = [
       "https://images.unsplash.com/photo-1500856056008-859079534e9e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8bGVnZW5kfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60",
   },
 ];
+
+const featuredGame = {
+  name: "Eternal Domination",
+  description:
+    "Immerse yourself in the thrilling criminal underworld of Los Santos in this action-packed open-world adventure. Take on heists, explore a vast city, and live out your criminal fantasies.",
+  slug: "eternal-domination",
+  image: featuredImage,
+};
+
+const featuredClassNames = {
+  gameName: "font-bold text-2xl md:text-3xl lg:text-4xl mb-4 md:mb-8",
+  gameDetails: "max-w-screen-md text-sm mb-8 md:mb-12",
+  gameImage: "h-72 md:h-96 lg:h-112 w-full object-cover rounded-lg",
+};
 
 export default page;
