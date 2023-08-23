@@ -26,7 +26,7 @@ export default function RootLayout({ children }) {
     <html lang="en" className={`${poppins.variable} ${montserrat.variable}`}>
       <body>
         <Header />
-        <main className="bg-primary-gradient max-h-screen">{children}</main>
+        <main className="bg-primary-gradient max-h-100vh">{children}</main>
         <Footer />
       </body>
     </html>
