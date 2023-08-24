@@ -80,6 +80,28 @@ const page = () => {
           </div>
         </div>
       </section>
+
+      {/* recent secion  */}
+      <section id="recent-games" className={recentGameClasses.section}>
+        <h2 className={recentGameClasses.heading}>Our Recent Games</h2>
+        <p className={recentGameClasses.subHeading}>
+          Stay Ahead of the Gaming Curve with Our Latest Games
+        </p>
+        <div className="flex rounded gap8 flex-wrap py-10">
+          {games.map((game) => (
+            <GameCard
+              key={game.id}
+              gameName={game.name}
+              imageUrl={game.image}
+              slug={game.slug}
+              price={game.price}
+            />
+          ))}
+        </div>
+        <Link href="games" className={sectionClassNames.latestButton}>
+          See All
+        </Link>
+      </section>
     </>
   );
 };
@@ -153,6 +175,12 @@ const styles = {
     "text-center max-w-md sm:max-w-lg md:max-w-2xl mx-auto text-primary font-bold text-2xl sm:text-3xl md:text-4xl lg:text-5xl mb-4 leading-[130%,187%,130%,130%]",
   categorySubHeading:
     "text-center bg-primary-gradient px-8 rounded-3xl py-5 max-w-md sm:max-w-lg md:max-w-2xl mx-auto text-white text-base sm:text-lg md:text-xl lg:text-2xl mb-8",
+};
+
+const recentGameClasses = {
+  section: "py-16 lg:py-36 px-4 lg:px-36 text-white text-center",
+  heading: "text-3xl lg:text-4xl font-bold mb-3",
+  subHeading: "text-gray-400 max-w-xl mx-auto lg:text-lg",
 };
 
 const categories = [
