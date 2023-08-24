@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import featuredImage from "@/public/images/trending.jpeg";
+import GameCategoryCard from "@/components/GameCategoryCard/GameCategoryCard";
 
 const page = () => {
   return (
@@ -47,6 +48,36 @@ const page = () => {
               className={featuredClassNames.gameImage}
             />
           </Link>
+        </div>
+      </section>
+
+      {/* //categoy  */}
+
+      <section
+        style={{
+          backgroundImage: `url("https://media.istockphoto.com/id/1456297919/photo/illustration-of-an-abstract-sci-fi-scene-where-the-light-falls-from-the-top-on-a-tree-whose.webp?b=1&s=170667a&w=0&k=20&c=WNpy23oZknpWlQ-0OlGhhY230o5YpmchxaFjPipLSPc=")`,
+        }}
+        className={`pb-40 ${styles.categoryContent}`}
+      >
+        <div className={styles.categoryContent}>
+          <h2 className={styles.categoryHeading}>Categories</h2>
+          <p className={styles.categorySubHeading}>
+            Explore a wide range of games, offering thrilling adventures ,
+            challenging sports , and immersive action gamePlay . Discover new
+            worlds , compare with friends , and embark on epic quests that will
+            keep you entertained for hours
+          </p>
+          <div className=" flex flex-wrap">
+            {categories.map((category) => (
+              <GameCategoryCard
+                key={category.id}
+                categoryImage={category.image}
+                categoryName={category.name}
+                slug={category.slug}
+                name={category.name}
+              />
+            ))}
+          </div>
         </div>
       </section>
     </>
@@ -113,5 +144,39 @@ const featuredClassNames = {
   gameDetails: "max-w-screen-md text-sm mb-8 md:mb-12",
   gameImage: "h-72 md:h-96 lg:h-112 w-full object-cover rounded-lg",
 };
+
+const styles = {
+  categorySection:
+    "bg-center bg-cover bg-no-repeat py-16 sm:py-20 md:py-28 lg:py-32",
+  categoryContent: "container mx-auto px-4 sm:px-6 md:px-8",
+  categoryHeading:
+    "text-center max-w-md sm:max-w-lg md:max-w-2xl mx-auto text-primary font-bold text-2xl sm:text-3xl md:text-4xl lg:text-5xl mb-4 leading-[130%,187%,130%,130%]",
+  categorySubHeading:
+    "text-center bg-primary-gradient px-8 rounded-3xl py-5 max-w-md sm:max-w-lg md:max-w-2xl mx-auto text-white text-base sm:text-lg md:text-xl lg:text-2xl mb-8",
+};
+
+const categories = [
+  {
+    id: 1,
+    name: "Action",
+    slug: "action",
+    image:
+      "https://images.unsplash.com/photo-1552072092-7f9b8d63efcb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8ZmlnaHR8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60",
+  },
+  {
+    id: 2,
+    name: "Adventure",
+    slug: "adventure",
+    image:
+      "https://images.unsplash.com/photo-1536751048178-14106afab4f9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8cmFjaW5nfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60",
+  },
+  {
+    id: 3,
+    name: "Sports",
+    slug: "sports",
+    image:
+      "https://images.unsplash.com/photo-1579952363873-27f3bade9f55?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8c3BvcnRzfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60",
+  },
+];
 
 export default page;
