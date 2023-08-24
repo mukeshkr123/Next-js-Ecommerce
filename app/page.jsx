@@ -30,7 +30,7 @@ const page = () => {
         </div>
       </section>
 
-      <h3 className="font-semibold text-2xl max-w-3xl text-center text-primary-dark m-20 ">
+      <h3 className="font-semibold text-4xl max-w-3xl text-center text-primary-dark m-20 ">
         Featured Game
       </h3>
 
@@ -58,7 +58,7 @@ const page = () => {
         style={{
           backgroundImage: `url("https://media.istockphoto.com/id/1456297919/photo/illustration-of-an-abstract-sci-fi-scene-where-the-light-falls-from-the-top-on-a-tree-whose.webp?b=1&s=170667a&w=0&k=20&c=WNpy23oZknpWlQ-0OlGhhY230o5YpmchxaFjPipLSPc=")`,
         }}
-        className={`pb-40 ${styles.categoryContent}`}
+        className={`pt-10 pb-20 ${styles.categoryContent}`}
       >
         <div className={styles.categoryContent}>
           <h2 className={styles.categoryHeading}>Categories</h2>
