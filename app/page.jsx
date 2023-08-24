@@ -5,6 +5,7 @@ import Link from "next/link";
 import React from "react";
 import featuredImage from "@/public/images/trending.jpeg";
 import GameCategoryCard from "@/components/GameCategoryCard/GameCategoryCard";
+import NewsLetter from "@/components/NewsLetter/NewsLetter";
 
 const page = () => {
   return (
@@ -102,6 +103,7 @@ const page = () => {
           See All
         </Link>
       </section>
+      <NewsLetter />
     </>
   );
 };
